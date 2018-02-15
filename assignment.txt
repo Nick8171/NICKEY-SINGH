@@ -1,0 +1,47 @@
+import java.util.Scanner;
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan =new Scanner(System.in);
+        int n=scan.nextInt();
+        while(scan.hasNext()){
+            int p=scan.nextInt();
+            int check=p;
+            int val=p;
+            int sum=0;
+            int rem=0;
+            for(int i=1;i<1000000;i++){
+                while(p!=0){
+                     rem=p%10;
+                     sum=sum*10+rem;
+                    p=p/10;
+                }
+                if(check==sum){
+                    break;
+                }
+                else{
+                    check=check+1;
+                p=check;
+                    sum=0;
+                }
+            }
+            if(sum>=1000000){
+                System.out.println("p exceeds 1000000");
+            }
+            else
+            System.out.println(sum);
+        }
+    }
+}
+
+
+
+
+Test cases-
+case1-2 809 2136
+case2-3 12 54 678
+case3-4 5473 87432 38739 468
+and so on.....
+
+
+All test cases pass.
